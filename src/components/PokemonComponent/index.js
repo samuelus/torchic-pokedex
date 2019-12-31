@@ -1,12 +1,47 @@
 import React from 'react';
-import {Card} from '@material-ui/core';
+import {Card, CardActionArea, CardMedia, CardContent, Typography} from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles';
 
-export default class Pokemon extends React.Component {
+const classes = theme => ({
+    card: {
+        width: 180,
+        margin: 10,
+        padding: 5,
+        boxShadow: 8,
+        borderRadius: 10
+    },
+
+    desc: {
+        fontSize: 12,
+        textTransform: 'uppercase',
+        letterSpacing: '1.35mm',
+        textAlign: 'center',
+        alignItems: 'center',
+    }
+
+})
+
+class Pokemon extends React.Component {
     render() {
+        const classes = this.props.classes
         return (
-            <Card style={{width: 180, margin: 10, padding: 5}}>
-                <img style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}} src={this.props.pokemon.img} alt=""/>
+            <Card className={classes.card} raised={true} elevation={4}>
+                <CardActionArea>
+                    <div style={{height: 170}}>
+                    <CardMedia
+                        component="img"
+                        alt={this.props.pokemon.name}
+                        image={this.props.pokemon.img}
+                    />
+                    </div>
+                    <CardContent>
+                        <Typography className={classes.desc}>
+                            {this.props.pokemon.name}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
         )
     }
 }
+export default withStyles(classes)(Pokemon)

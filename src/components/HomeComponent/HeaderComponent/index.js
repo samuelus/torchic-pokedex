@@ -2,6 +2,7 @@ import React from 'react';
 import Torchic1 from '../../../assets/Torchic1.png';
 import {Container} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
 
 const classes = theme => ({
 
@@ -66,7 +67,7 @@ class Header extends React.Component
                 <Container className={classes.text}>
                     <h1 className={classes.title}>Torchic Pokédex</h1>
                     Want to know everything about every Pokémon? <br/>
-                    Check out our Pokédex - tips &amp; tricks all day!
+                    Check out our <Link to='/pokedex' style={{textDecoration: 'none', color: "#ffc107"}}>Pokédex</Link> - tips &amp; tricks all day!
                 </Container>
             </Container>
         )

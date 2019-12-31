@@ -8,9 +8,9 @@ import Scrollbars from 'react-custom-scrollbars';
 
 const classes = theme => ({
     pokeWrapper: {
-        maxHeight: '75vh',
+        maxHeight: '70vh',
         overflow: 'auto',
-        margin: 30,
+        margin: theme.spacing(3),
         display: 'flex',
         flexWrap: 'wrap'
     },
@@ -21,7 +21,7 @@ const classes = theme => ({
     },
 
     title: {
-        margin: theme.spacing(5),
+        margin: theme.spacing(3),
         marginLeft: theme.spacing(10),
         letterSpacing: '1.35mm',
         fontSize: 20,
@@ -50,7 +50,7 @@ class Pokedex extends React.Component {
                         autoHideTimeout={1000}
                         style={{
                             width: "100%",
-                            height: "75vh",
+                            height: "70vh",
                     }} >
                         <Paper className={classes.pokeContent}>
                             {this.pokemons.map((pokemon) => (

@@ -1,9 +1,9 @@
 import Home from '../components/HomeComponent';
-import Pokedex from '../components/PokedexComponent';
+import Android from '../components/AndroidComponent';
 
 const routes = [
     {path: '/home', component: Home},
-    {path: '/pokedex', component: Pokedex}
+    {path: '/android', component: Android}
 ]
 
 export {routes}

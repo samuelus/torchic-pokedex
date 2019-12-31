@@ -1,10 +1,8 @@
 import React from 'react';
-import List1 from '../../assets/pokedex.json';
-import List2 from '../../assets/pokemon.json';
-import Pokemon from '../PokemonComponent';
 import {Paper, Typography} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import Scrollbars from 'react-custom-scrollbars';
+import Pokemon from "../PokemonComponent";
 
 const classes = theme => ({
     pokeWrapper: {
@@ -30,20 +28,26 @@ const classes = theme => ({
     }
 })
 
-class Pokedex extends React.Component {
+class Android extends React.Component {
     constructor(props) {
         super(props)
-        this.pokemons = List1.map((value, index) => ({
-            ...value,
-            description: List2[index].description
-        }))
+        this.state = {pokemons: ['{"articles":[{}]}']}
+    }
+    componentWillMount() {
+        fetch('https://newsapi.org/v2/everything?q=Android&?q=Android&apiKey=c25a7118fd48458dbe1caa67d06e3d6b')
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({pokemons: data})
+            })
     }
 
     render() {
-        const classes = this.props.classes
+        const pikamon = this.state.pokemons;
+        const classes = this.props.classes;
+        console.log(pikamon)
         return (
             <div>
-                <Typography className={classes.title}>Pokédex</Typography>
+                <Typography className={classes.title}>Android</Typography>
                 <div className={classes.pokeWrapper}>
                     <Scrollbars
                         autoHide
@@ -53,8 +57,8 @@ class Pokedex extends React.Component {
                             height: "70vh",
                     }} >
                         <Paper className={classes.pokeContent}>
-                            {this.pokemons.map((pokemon) => (
-                                <Pokemon key = {pokemon.id} pokemon={pokemon}/>
+                            {pikamon.map((pokemon) => (
+                                <Pokemon key = {pokemon.name} pokemon={pokemon}/>
                             ))}
                         </Paper>
                     </Scrollbars>
@@ -63,5 +67,4 @@ class Pokedex extends React.Component {
         )
     }
 }
-
-export default withStyles(classes)(Pokedex)
+export default withStyles(classes)(Android)

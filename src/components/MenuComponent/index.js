@@ -18,9 +18,9 @@ class Menu extends React.Component
                                 <Home/>
                             </IconButton>
                         </Link>
-                        <Link to='/pokedex'>
+                        <Link to='/android'>
                             <Button style = {{letterSpacing: '1mm'}}>
-                                Pokédex
+                                Android
                             </Button>
                         </Link>
                         <IconButton style = {{marginLeft: "auto", marginRight: spacing}}>

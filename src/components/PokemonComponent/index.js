@@ -30,13 +30,13 @@ class Pokemon extends React.Component {
                     <div style={{height: 170}}>
                     <CardMedia
                         component="img"
-                        alt={this.props.pokemon.name}
-                        image={this.props.pokemon.img}
+                        alt="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/vksot560mgsl75tqvxbb.jpg"
+                        image="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/vksot560mgsl75tqvxbb.jpg"
                     />
                     </div>
                     <CardContent>
                         <Typography className={classes.desc}>
-                            {this.props.pokemon.name}
+                            "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/vksot560mgsl75tqvxbb.jpg"
                         </Typography>
                     </CardContent>
                 </CardActionArea>
